@@ -12,8 +12,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "engine": {
-    "nodejs": "v16.14.2"
+  "engines": {
+    "node": "v16.14.2",
+    "npm": "8.17.0"
   },
   "dependencies": {
     "axios": "^0.27.2",
