@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "start:dev": "set DEBUG=recuphoraire-v2:* & npm start",
-    "start:front": "cd client & npm start",
-    "build": "cd client & npm install & npm run build"
+    "start:front": "cd client & npm start"
   },
   "keywords": [],
   "author": "",

@@ -27,14 +27,14 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 // Have Node serve the files for our built React app
-app.use(express.static(path.resolve(__dirname, './client/build')))
+app.use(express.static(path.resolve(__dirname, 'build')))
 
 app.use('/sheets', sheetsRouter)
 app.use('/users', usersRouter)
 
 // All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'))
+  res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
 })
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
