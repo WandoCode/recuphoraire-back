@@ -5,7 +5,6 @@ const mockAllSheets = require('../test/mockSheetsValues.json')
 const SpreadsheetFactory = async (APIKey, spreadsheetId, rangeParam) => {
   let spreadsheet = []
   let range = rangeParam || 'A1:R55'
-  console.debug(process.env.DEV)
 
   const init = async () => {
     spreadsheet = await getAllSheets()

@@ -12,7 +12,6 @@ function ContextProvider(props) {
 
   const logIn = (username) => {
     setState({ username, isLoggedIn: true })
-    console.log('Logged in')
   }
 
   const logOut = () => {

@@ -30,7 +30,6 @@ function LoginForm(props) {
     })
 
     const loginIsOk = res.data.authenticate
-    console.log(loginIsOk)
     if (loginIsOk === 'true') {
       logIn(username)
       navigate('/')
