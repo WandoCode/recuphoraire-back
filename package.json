@@ -13,6 +13,6 @@
   "author": "",
   "license": "ISC",
   "engine": {
-    "node": "v16.14.2"
+    "nodejs": "v16.14.2"
   }
 }
