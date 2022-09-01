@@ -11,6 +11,6 @@ exports.getAll = async (req, res, next) => {
     res.status(200).json(allSheets)
   } catch (err) {
     console.debug(err)
-    res.status(500).send({ message: API_KEY })
+    res.status(500).send({ message: err })
   }
 }
