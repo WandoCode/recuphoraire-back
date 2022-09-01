@@ -23,6 +23,7 @@ function LoginForm(props) {
     setPassword(e.target.value)
   }
 
+  console.log(process.env.BASE_URL)
   const handleSubmit = async (e) => {
     e.preventDefault()
     const res = await axios.post(BASE_URL + 'users/login', {

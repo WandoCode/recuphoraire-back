@@ -8,7 +8,7 @@ const cors = require('cors')
 let corsOptions = {
   origin: '*',
 }
-if (process.env.NODE_ENV === 'development') require('dotenv').config()
+require('dotenv').config()
 
 var sheetsRouter = require('./routes/sheets')
 var usersRouter = require('./routes/users')
