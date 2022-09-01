@@ -16,7 +16,7 @@ class DataManager {
   }
 
   loadSheetsFromSpreadsheet = async () => {
-    const res = await fetch('http://localhost:5050/sheets/all_datas')
+    const res = await fetch('http://localhost:3001/sheets/all_datas')
     const allSheets = await res.json()
     return allSheets
   }
