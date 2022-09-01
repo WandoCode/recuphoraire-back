@@ -15,10 +15,10 @@ const SpreadsheetFactory = async (APIKey, spreadsheetId, rangeParam) => {
     if (process.env.DEV === 'true') {
       datas = mockSpreadSheet
     } else {
-      const result = await axios.get(
+      const res = await axios.get(
         `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?key=${APIKey}`
       )
-      datas = await JSON.parse(result)
+      datas = res.data
     }
     return datas
   }
@@ -44,11 +44,10 @@ const SpreadsheetFactory = async (APIKey, spreadsheetId, rangeParam) => {
   }
 
   const getOneSheetValues = async (sheetTitle, range) => {
-    const datas = await axios.get(
+    const res = await axios.get(
       `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetTitle}!${range}?key=${APIKey}`
     )
-    const sheetValues = await JSON.parse(datas)
-
+    const sheetValues = res.data
     return sheetValues
   }
 

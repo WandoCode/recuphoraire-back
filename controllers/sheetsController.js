@@ -1,8 +1,8 @@
 const SpreadsheetFactory = require('../factory/GoogleSpreadsheet.js')
 
 exports.getAll = async (req, res, next) => {
-  const API_KEY = process.env.REACT_APP_.API_KEY
-  const spreadsheetID = process.env.REACT_APP_.spreadsheetID
+  const API_KEY = process.env.API_KEY
+  const spreadsheetID = process.env.spreadsheetID
 
   try {
     const spreadsheet = await SpreadsheetFactory(API_KEY, spreadsheetID)

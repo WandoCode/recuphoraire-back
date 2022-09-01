@@ -5,10 +5,11 @@ var cookieParser = require('cookie-parser')
 var logger = require('morgan')
 const cors = require('cors')
 
+require('dotenv').config()
+
 let corsOptions = {
-  origin: '*',
+  origin: [process.env.CORS_URL],
 }
-if (process.env.NODE_ENV === 'development') require('dotenv').config()
 
 var sheetsRouter = require('./routes/sheets')
 var usersRouter = require('./routes/users')
@@ -26,16 +27,8 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
-// Have Node serve the files for our built React app
-app.use(express.static(path.resolve(__dirname, './client/build')))
-
 app.use('/sheets', sheetsRouter)
 app.use('/users', usersRouter)
-
-// All other GET requests not handled before will return our React app
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'))
-})
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

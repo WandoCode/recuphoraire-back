@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./bin/www",
-    "start:dev": "set DEBUG=recuphoraire-v2:* & npm start",
-    "start:front": "cd client & npm start"
+    "start:dev": "set DEBUG=recuphoraire-v2:* & npm start"
   },
   "keywords": [],
   "author": "",
