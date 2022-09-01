@@ -6,7 +6,7 @@ var logger = require('morgan')
 const cors = require('cors')
 
 let corsOptions = {
-  origin: ['http://localhost:3000'],
+  origin: '*',
 }
 
 require('dotenv').config()
