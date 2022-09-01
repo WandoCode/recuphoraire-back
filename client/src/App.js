@@ -8,10 +8,8 @@ function App() {
   const [datas, setDatas] = useState({})
   const [names, setNames] = useState([])
   const [currentName, setCurrentName] = useState('')
-  const API_KEY = process.env.REACT_APP_.GOOGLE_API_KEY
-  const spreadSheetID = process.env.REACT_APP_.spreadSheetID
 
-  const dataManager = new DataManager(API_KEY, spreadSheetID)
+  const dataManager = new DataManager()
 
   useEffect(() => {
     const fetchDatas = async () => {

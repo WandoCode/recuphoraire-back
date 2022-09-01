@@ -1,10 +1,10 @@
 import GoogleSheet from './GoogleSheet.js'
 import { formatHours, capitalizeFirstLetter, formatDate } from './helpers.js'
 
+const BASE_URL = process.env.BASE_URL || 'http://localhost:3001/'
+
 class DataManager {
-  constructor(API_KEY, spreadsheetID) {
-    this.API_KEY = API_KEY
-    this.spreadsheetID = spreadsheetID
+  constructor() {
     this.holidays = {}
     this.formattedDatas = {}
     this.polyclinics = ['cavell', 'lmbt', 'cpl']
@@ -16,7 +16,7 @@ class DataManager {
   }
 
   loadSheetsFromSpreadsheet = async () => {
-    const res = await fetch('http://localhost:3001/sheets/all_datas')
+    const res = await fetch(BASE_URL + 'sheets/all_datas')
     const allSheets = await res.json()
     return allSheets
   }
