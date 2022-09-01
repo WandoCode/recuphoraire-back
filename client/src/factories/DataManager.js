@@ -1,7 +1,8 @@
 import GoogleSheet from './GoogleSheet.js'
 import { formatHours, capitalizeFirstLetter, formatDate } from './helpers.js'
 
-const BASE_URL = process.env.BASE_URL || 'https://horaire-delta.herokuapp.com/'
+const BASE_URL =
+  process.env.REACT_APP_.BASE_URL || 'https://horaire-delta.herokuapp.com/'
 
 class DataManager {
   constructor() {
