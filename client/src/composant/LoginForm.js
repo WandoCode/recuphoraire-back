@@ -6,7 +6,8 @@ import { useContext } from 'react'
 import { AuthContext } from '../utils/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-
+const BASE_URL = process.env.BASE_URL || 'https://horaire-delta.herokuapp.com/'
+console.log(BASE_URL)
 function LoginForm(props) {
   let navigate = useNavigate()
   const { logIn } = useContext(AuthContext)
@@ -24,7 +25,7 @@ function LoginForm(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const res = await axios.post('http://localhost:3001/users/login', {
+    const res = await axios.post(BASE_URL + 'users/login', {
       username: username,
       password: password,
     })
