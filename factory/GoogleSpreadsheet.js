@@ -19,11 +19,12 @@ const SpreadsheetFactory = async (APIKey, spreadsheetId, rangeParam) => {
         const res = await axios.get(
           `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?key=${APIKey}`
         )
+        console.log('ok')
         datas = res.data
 
         return datas
       } catch (err) {
-        throw new Error(err + ' spreadsheet')
+        throw new Error(err + 'at spreadsheet')
       }
     }
   }
