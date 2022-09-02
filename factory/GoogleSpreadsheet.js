@@ -14,12 +14,14 @@ const SpreadsheetFactory = async (APIKey, spreadsheetId, rangeParam) => {
     let datas = undefined
     if (process.env.DEV === 'true') {
       datas = mockSpreadSheet
+      return datas
     } else {
       try {
+        console.log(`APIkey:${APIKey} - process:${process.env.API_KEY}`)
         const res = await axios.get(
           `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?key=${APIKey}`
         )
-        console.log('ok')
+
         datas = res.data
 
         return datas
