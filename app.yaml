@@ -1,0 +1,5 @@
+runtime: nodejs16
+env: standard
+automatic_scaling:
+  min_idle_instances: 1
+  max_idle_instances: automatic

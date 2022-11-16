@@ -5,7 +5,6 @@ exports.login = (req, res, next) => {
   const password = req.body.password
 
   if (username === 'techdel' && password === 'chirec') {
-    console.log(process.env.EMAIL_PASSWORD)
     let transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
