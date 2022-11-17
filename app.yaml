@@ -4,7 +4,7 @@ automatic_scaling:
   min_idle_instances: 1
   max_idle_instances: automatic
 env_variables:
-  API_KEY: '0'
+  API_KEY: '00'
   spreadSheetID: '1t-sCJ_CmXedbU8M7BlZhdMHHIFOgKO6Mgm998EXuz20'
   DEV: 'false'
   EMAIL: 'HoraireDelta2@gmail.com'
