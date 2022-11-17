@@ -2,7 +2,7 @@ const SpreadsheetFactory = require('../factory/GoogleSpreadsheet.js')
 
 exports.getAll = async (req, res, next) => {
   const API_KEY = process.env.API_KEY
-  const spreadsheetID = process.env.spreadsheetID
+  const spreadsheetID = process.env.spreadSheetID
 
   try {
     const spreadsheet = await SpreadsheetFactory(API_KEY, spreadsheetID)
